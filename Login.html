@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso por <form action=""></form></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        body
+        {
+            height: 100%;
+            width: 100%;
+            background-image: url(imagenes/fondo.webp);
+            background-size: cover;
+        }
+        
+        form
+        {
+            width: 50%;
+            margin-top: 20%;
+            margin-left: 40%;
+        }
+
+        input
+        {
+            width: 300px;
+            height: 29px;
+            border-radius: 4px;
+            border-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <form class="needs-validation" novalidate
+    method="get" action="recibirDatos.html">
+      <fieldset>
+        <legend>
+            Acceso a usuarios
+        </legend>
+        <table>
+            <tr>
+                <td>
+                    <b>Nombre de usuario</b>
+                </td>
+                <td>
+                    <input class="form-control" 
+                    type="text" name="usuario" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Contraseña</b>
+                </td>
+                <td>
+                    <input class="form-control" 
+                    type="password" name="contraseña" required/>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Ingresar"/>
+
+        <button>
+            <a href="CrearCuenta.html">
+              Crear cuenta  
+            </a>
+        </button>
+        
+      </fieldset>
+    </form>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+                }, false)
+            })
+            })()
+    </script>
+</body>
+</html>
